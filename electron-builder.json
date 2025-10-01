@@ -1,0 +1,54 @@
+{
+
+  "appId": "com.shivakeshava.service-management",
+  "productName": "SHIVAKESHAVA ELECTRONICS Service Management",
+  "directories": {
+    "output": "dist-desktop"
+  },
+  "files": [
+    "dist/**/*",
+    "electron-main.cjs",
+    "server/**/*",
+    "shared/**/*",
+    "migrations/**/*",
+    "node_modules/**/*",
+    "database-setup.sql",
+    ".env.local"
+  ],
+  "extraResources": [
+    {
+      "from": "database-setup.sql",
+      "to": "database-setup.sql"
+    },
+    {
+      "from": "migrations",
+      "to": "migrations"
+    }
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "assets/icon.ico",
+    "requestedExecutionLevel": "asInvoker"
+  },
+  "mac": {
+    "target": "dmg",
+    "icon": "assets/icon.icns",
+    "category": "public.app-category.business"
+  },
+  "linux": {
+    "target": "AppImage",
+    "icon": "assets/icon.png",
+    "category": "Office"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "SHIVAKESHAVA Service Management"
+  },
+  "publish": {
+    "provider": "generic",
+    "url": "https://your-update-server.com/"
+  }
+}
